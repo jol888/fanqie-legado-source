@@ -4,7 +4,7 @@
     "bookSourceGroup": "番茄",
     "bookSourceUrl": "https://fanqienovel.com",
     "bookSourceType": 0,
-    "bookSourceComment": "公开番茄镜像。搜索走 novel.snssdk.com 公开接口；详情、目录、正文和段评由 Ceres 的 fanqie:// 原生客户端完成，需要 Ceres 内置的番茄支持。",
+    "bookSourceComment": "公开番茄镜像。搜索走 novel.snssdk.com 公开接口；详情、目录、正文和段评由 Ceres 内置的番茄协议实现完成（不打包番茄 App）。",
     "enabled": true,
     "enabledExplore": false,
     "enabledCookieJar": false,
