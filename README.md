@@ -8,7 +8,7 @@
 
 **该源需要 [Ceres](https://github.com/jol888/ceres) 阅读器。** 原版 Legado 无法直接使用。
 
-书源里的详情、目录、正文与段评地址使用 `fanqie://` 合成地址，由 Ceres 内置的原生番茄客户端解析：设备注册、请求签名、正文解密和评论接口都在客户端完成。搜索则直接使用公开的 `novel.snssdk.com` 接口，不依赖客户端。
+书源里的详情、目录、正文与段评地址使用 `fanqie://` 合成地址，由 Ceres 内置的番茄协议模块解析：设备注册、请求签名、正文解密和评论接口都在 Ceres 内完成，不需要安装番茄小说 App。搜索则直接使用公开的 `novel.snssdk.com` 接口，不依赖该模块。
 
 ## 用法
 
@@ -24,14 +24,14 @@
 | 规则 | 来源 |
 | --- | --- |
 | 搜索 | `https://novel.snssdk.com/api/novel/channel/homepage/search/search/v1/` |
-| 详情 | `fanqie://book/<book_id>`（原生客户端） |
+| 详情 | `fanqie://book/<book_id>`（Ceres 内置模块） |
 | 目录 | `fanqie://toc/<book_id>`（公开 web 目录接口） |
-| 正文 | `fanqie://chapter/<book_id>/<item_id>`（原生客户端） |
+| 正文 | `fanqie://chapter/<book_id>/<item_id>`（Ceres 内置模块） |
 | 段评统计 | `fanqie://reviews/summary` |
 | 段评列表 | `fanqie://reviews/<para_index>/<page>` |
 | 评论回复 | `fanqie://replies/<comment_id>/<page>` |
 
-段评统计会跳过整章汇总（索引 0），只把有评论的段落交给阅读器；评论列表与回复由客户端归一化成 Ceres 的段评协议。
+段评统计会跳过整章汇总（索引 0），只把有评论的段落交给阅读器；评论列表与回复由 Ceres 归一化成段评协议。
 
 ## 实测
 
