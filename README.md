@@ -12,7 +12,7 @@
 
 ## 用法
 
-1. 安装 [Ceres](https://github.com/jol888/ceres)（`app/build/outputs/apk/debug/app-debug.apk`）。
+1. 克隆并构建 [Ceres](https://github.com/jol888/ceres)：`./gradlew :app:assembleDebug`，安装 `app/build/outputs/apk/debug/app-debug.apk`。
 2. 打开「书源」→「导入」，选择本仓库的 `fanqie_novel_source.json`，或把 JSON 内容粘贴到剪贴板后导入。
 3. 搜索任意书名（示例：《十日终焉》），打开书籍即可阅读。
 4. 阅读时打开「显示段评」，段尾会显示评论数，点开可看评论与回复。
