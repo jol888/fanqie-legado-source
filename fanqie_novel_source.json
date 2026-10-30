@@ -1,0 +1,68 @@
+[
+  {
+    "bookSourceName": "番茄小说·段评",
+    "bookSourceGroup": "番茄",
+    "bookSourceUrl": "https://fanqienovel.com",
+    "bookSourceType": 0,
+    "bookSourceComment": "公开番茄镜像。搜索走 novel.snssdk.com 公开接口；详情、目录、正文和段评由 Ceres 的 fanqie:// 原生客户端完成，需要 Ceres 内置的番茄支持。",
+    "enabled": true,
+    "enabledExplore": false,
+    "enabledCookieJar": false,
+    "customOrder": 0,
+    "weight": 0,
+    "searchUrl": "https://novel.snssdk.com/api/novel/channel/homepage/search/search/v1/?q={{encodeURIComponent(key)}}&aid=1967&offset={{(page-1)*10}}&count=10",
+    "ruleSearch": {
+      "bookList": "$.data.ret_data[*]",
+      "name": "$.title",
+      "author": "$.author",
+      "intro": "$.abstract",
+      "kind": "$.category",
+      "lastChapter": "$.last_chapter_title",
+      "coverUrl": "$.thumb_url",
+      "bookUrl": "@js:java.fanqieBookUrl(java.getString('$.book_id'))"
+    },
+    "ruleBookInfo": {
+      "name": "$.name",
+      "author": "$.author",
+      "intro": "$.intro",
+      "kind": "$.kind",
+      "lastChapter": "$.lastChapter",
+      "coverUrl": "$.coverUrl",
+      "wordCount": "$.wordCount",
+      "tocUrl": "$.tocUrl"
+    },
+    "ruleToc": {
+      "chapterList": "$.data.chapterListWithVolume[*][*]",
+      "chapterName": "$.title",
+      "chapterUrl": "@js:java.fanqieChapterUrl(book.bookUrl, java.getString('$.itemId'))",
+      "isVip": "$.isChapterLock",
+      "isPay": "$.needPay"
+    },
+    "ruleContent": {
+      "content": "@js:result"
+    },
+    "ruleReview": {
+      "enabled": true,
+      "reviewSummaryUrl": "fanqie://reviews/summary",
+      "summaryListRule": "$.items[*]",
+      "summaryParagraphIndexRule": "$.paraIndex",
+      "summaryParagraphDataRule": "$.paraIndex",
+      "summaryCountRule": "$.count",
+      "reviewDetailUrl": "fanqie://reviews/{{paraIndex}}/{{page}}",
+      "reviewDetailNextPageUrl": "$.next",
+      "detailListRule": "$.items[*]",
+      "detailIdRule": "$.id",
+      "detailAvatarRule": "$.avatar",
+      "detailNameRule": "$.name",
+      "detailBadgeRule": "$.badges",
+      "detailContentRule": "$.content",
+      "reviewQuoteUrl": "fanqie://replies/{{reviewId}}/{{page}}",
+      "replyListRule": "$.items[*]",
+      "replyIdRule": "$.id",
+      "replyAvatarRule": "$.avatar",
+      "replyNameRule": "$.name",
+      "replyBadgeRule": "$.badges",
+      "replyContentRule": "$.content"
+    }
+  }
+]
